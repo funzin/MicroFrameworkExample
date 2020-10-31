@@ -1,0 +1,31 @@
+@startuml
+title MicroFrameworkExample
+
+package Core {
+    [Builder]
+    [APIClient]
+    [Environment]
+    [Request]
+}
+
+package Feature {
+  frame Tab <<Framework>> {
+  }
+  frame AFeature <<Framework>> {
+  }
+  frame BFeature <<Framework>> {
+  }
+}
+
+component App
+
+App --> AFeature
+App --> BFeature
+App --> Tab
+App -----> Core
+AFeature ---> Core
+BFeature ---> Core
+Tab ---> Core
+
+
+@enduml

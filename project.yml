@@ -1,0 +1,37 @@
+minimumXcodeGenVersion: 2.18.0
+name: MicroFrameworkExample
+options:
+  bundleIdPrefix: com.funzin
+  createIntermediateGroups: true
+targets:
+  MicroFrameworkExample:
+    type: application
+    platform: iOS
+    sources: [Target/MicroFrameworkExample/MicroFrameworkExample]
+    dependencies:
+      - target: Core
+      - target: AFeature
+      - target: BFeature
+      - target: Tab
+  AFeature:
+    type: framework
+    platform: iOS
+    sources: [Target/AFeature/AFeature]
+    dependencies:
+      - target: Core
+  BFeature:
+    type: framework
+    platform: iOS
+    sources: [Target/BFeature/BFeature]
+    dependencies:
+      - target: Core
+  Tab:
+    type: framework
+    platform: iOS
+    sources: [Target/Tab/Tab]
+    dependencies:
+      - target: Core
+  Core:
+    type: framework
+    platform: iOS
+    sources: [Target/Core/Core]
